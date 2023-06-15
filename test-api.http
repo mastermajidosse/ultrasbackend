@@ -1,0 +1,401 @@
+
+//users section
+###get users
+get http://localhost:5000/api/v1/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+### login
+post http://localhost:5000/api/v1/users/login
+Content-Type: application/json
+
+{
+    "email":"younes@gmail.com",
+    "password":"12341234"
+}
+
+### register
+post http://localhost:5000/api/v1/users/register
+Content-Type: application/json
+
+{
+	"name":"senyou",
+	"email":"senyou@gmail.com",
+	"password":"12341234"
+}
+
+### get profile
+get http://localhost:5000/api/v1/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+### update user profile
+put http://localhost:5000/api/v1/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+{
+    "name":"younes"
+}
+
+### get user by id
+get http://localhost:5000/api/v1/users/64852daa13d7429732303eab
+
+### delete a user by the admin
+delete http://localhost:5000/api/v1/users/648530c036b3b764c0b8e1d0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+//products section
+
+###get products
+get http://localhost:5000/api/v1/products
+
+### create a product
+post http://localhost:5000/api/v1/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+{
+  "name": "Product 2",
+  "price": 10,
+  "description": "Description For Product 2",
+  "image": "https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg"
+}
+
+### get a product by Id
+get http://localhost:5000/api/v1/products/64853518fd927a65ae4e94d5
+
+### update a product by the admin
+put  http://localhost:5000/api/v1/products/64853518fd927a65ae4e94d5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+{
+	"name":"new name for Product 1"
+}
+
+### delete a product by the admin
+delete  http://localhost:5000/api/v1/products/6485356cfd927a65ae4e94dc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+
+### orders section
+
+### create an order
+post http://localhost:5000/api/v1/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+{
+  "productId":"64853518fd927a65ae4e94d5",
+   "quantity":2
+}
+
+### get my orders
+get http://localhost:5000/api/v1/orders/mine
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+### get order by id ( the owner of the order or the admin)
+get http://localhost:5000/api/v1/orders/648536a5fcbd6714c02da95e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+### get all the orders(by the admin)
+get http://localhost:5000/api/v1/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+
+
+
+//articles section
+
+###get articles
+get http://localhost:5000/api/v1/articles
+
+
+### create an article by the admin
+post http://localhost:5000/api/v1/articles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "title":"Article 1",
+  "content":"Some text"
+}
+
+### get an article by Id
+get http://localhost:5000/api/v1/articles/64866779d8e437fcab08a39e
+
+### update an article by the admin
+put  http://localhost:5000/api/v1/articles/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+	"title":"Article 3",
+  "content":"Some text"
+}
+
+### delete an article by the admin
+delete  http://localhost:5000/api/v1/articles/648674da7b9fc21c3e55152b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Like an article
+put  http://localhost:5000/api/v1/articles/like/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Remove like from an article
+put  http://localhost:5000/api/v1/articles/removeLike/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Add comment on an article
+put  http://localhost:5000/api/v1/articles/addComment/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "content": "nice work"
+}
+
+
+### Remove comment from an article
+put  http://localhost:5000/api/v1/articles/removeComment/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64867a8892e2139bcdb5e4ee"
+}
+
+### Like a comment
+put  http://localhost:5000/api/v1/articles/likeComment/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64867aab92e2139bcdb5e4f6"
+}
+
+
+### Remove like from a comment
+put  http://localhost:5000/api/v1/articles/removeCommentLike/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64867aab92e2139bcdb5e4f6"
+}
+
+
+### Reply on a comment
+put  http://localhost:5000/api/v1/articles/addReply/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64867aab92e2139bcdb5e4f6",
+  "content": "thanks"
+}
+
+
+### Remove reply from a comment
+put  http://localhost:5000/api/v1/articles/removeReply/64866779d8e437fcab08a39e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64867aab92e2139bcdb5e4f6",
+  "replyId": "64867c11028338c13153b7fd"
+}
+
+
+
+//photos section
+
+###get photos
+get http://localhost:5000/api/v1/photos
+
+
+### create a photo by the admin
+post http://localhost:5000/api/v1/photos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "title":"Photo 2",
+  "imageUrl":"https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg"
+}
+
+### get a photo by Id
+get http://localhost:5000/api/v1/photos/64867de504a19e535ae1cea8
+
+### update a photo by the admin
+put  http://localhost:5000/api/v1/photos/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+	"title":"Test 1",
+  "imageUrl":"https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg"
+}
+
+
+### delete a photo by the admin
+delete  http://localhost:5000/api/v1/photos/648687975f91e873aa8dad80
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Like a photo
+put  http://localhost:5000/api/v1/photos/like/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Remove like from a photo
+put  http://localhost:5000/api/v1/photos/removeLike/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### Add comment on a photo
+put  http://localhost:5000/api/v1/photos/addComment/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "content": "nice photo!"
+}
+
+
+### Remove comment from a photo
+put  http://localhost:5000/api/v1/photos/removeComment/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "64868133751cea3ab82ae820"
+}
+
+### Like a comment
+put  http://localhost:5000/api/v1/photos/likeComment/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "648681d2fd96ec424212a76f"
+}
+
+
+### Remove like from a comment
+put  http://localhost:5000/api/v1/photos/removeCommentLike/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "648681d2fd96ec424212a76f"
+}
+
+
+### Reply on a comment
+put  http://localhost:5000/api/v1/photos/addReply/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "648681d2fd96ec424212a76f",
+  "content": "thanks"
+}
+
+
+### Remove reply from a comment
+put  http://localhost:5000/api/v1/photos/removeReply/64867de504a19e535ae1ceaa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "commentId": "648681d2fd96ec424212a76f",
+  "replyId": "648683b8ffe2edbef0724602"
+}
+
+
+
+//videos section
+
+
+###get videos
+get http://localhost:5000/api/v1/videos
+
+
+### create video by the admin
+post http://localhost:5000/api/v1/videos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "name": "Test4",
+  "url": "https://res.cloudinary.com/senyou/video/upload/v1686346471/speedpainting2_qorsfu.mp4",
+  "thumbnail": "https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg",
+  "channelName": "CTO"
+}
+
+### get video by Id
+get http://localhost:5000/api/v1/videos/64856309ac646213f3e5f27d
+
+### update video by the admin
+put  http://localhost:5000/api/v1/videos/64856309ac646213f3e5f27d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+{
+  "name": "Test4-update",
+  "url": "https://res.cloudinary.com/senyou/video/upload/v1686346471/speedpainting2_qorsfu.mp4",
+  "thumbnail": "https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg",
+  "channelName": "CTO"
+}
+
+### delete video by the admin
+delete  http://localhost:5000/api/v1/videos/64856309ac646213f3e5f27d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+//songs section
+
+
+###get songs
+get http://localhost:5000/api/v1/songs
+
+
+### create song by the admin
+post http://localhost:5000/api/v1/songs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjgzMzgzNywiZXhwIjoxNjg5NDI1ODM3fQ.wa9caVPmunnPI2C10F5wJA5IAr78DYbUVWxHYaatgBA
+
+{
+  "title": "Song 2",
+  "url": "song_url",
+  "teamName": "Team A",
+  "releaseDate": "2020-06-01",
+  "lyrics":"heeeho"
+
+}
+
+### get song by Id
+get http://localhost:5000/api/v1/songs/648a03ae631608ebb32258d2
+
+### update song by the admin
+put  http://localhost:5000/api/v1/songs/648a03ae631608ebb32258d2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjgzMzgzNywiZXhwIjoxNjg5NDI1ODM3fQ.wa9caVPmunnPI2C10F5wJA5IAr78DYbUVWxHYaatgBA
+
+{
+  "title": "Song 1",
+  "url": "song_url",
+  "teamName": "Team B",
+  "releaseDate": "2020-04-24",
+  "lyrics":"heeeho"
+}
+
+### delete song by the admin
+delete  http://localhost:5000/api/v1/songs/648a04f77ad4df2c34525f8e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
