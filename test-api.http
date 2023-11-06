@@ -419,6 +419,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
 
 ### create team by the admin
+
 post http://localhost:5000/api/v1/team
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
