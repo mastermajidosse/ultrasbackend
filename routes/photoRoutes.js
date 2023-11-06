@@ -1,11 +1,12 @@
 import express from "express";
 
 import { protect, admin } from "../middlewares/authMiddleware.js";
-import { createPhoto, deletePhoto, getPhoto,getPhotos, updatePhoto,addLike, removeLike, addComment, removeComment, addReply, removeReply, likeComment, removeCommentLike } from "../controllers/photoControllers.js";
+import { createPhoto, getPhotosThumb, deletePhoto, getPhoto, getPhotos, updatePhoto, addLike, removeLike, addComment, removeComment, addReply, removeReply, likeComment, removeCommentLike } from "../controllers/photoControllers.js";
 
 const router = express.Router();
 
 router.route("/").get(getPhotos).post(protect, admin, createPhoto);
+router.route("/thumb").get(getPhotosThumb).post(protect, admin, createPhoto);
 router
   .route("/:id")
   .get(getPhoto)

@@ -12,11 +12,14 @@ const videoSchema = mongoose.Schema(
     },
     thumbnail: {
       type: String,
-      required: true,
     },
     channelName: {
       type: String,
       required: true,
+    },
+    country: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Country',
     },
   },
   {

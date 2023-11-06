@@ -20,11 +20,11 @@ const orderSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
- 
+
 },
-{
-    timeStamps:true
-});
+  {
+    timeStamps: true
+  });
 
 const Order = mongoose.model('Order', orderSchema);
 

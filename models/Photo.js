@@ -44,6 +44,15 @@ const photoSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    tags: {
+      type: String,
+      required: true
+    },
+    isThumbnail: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
     comments: [commentSchemaType],
     likes: [mongoose.Types.ObjectId],
   },

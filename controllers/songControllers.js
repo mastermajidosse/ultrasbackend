@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Song from "../models/Song.js";
+import Teams from "../models/Teams.js";
 
 export const getSongs = asyncHandler(async (req, res) => {
   const pageSize = 10;
@@ -17,18 +18,29 @@ export const getSongs = asyncHandler(async (req, res) => {
 });
 
 export const createSong = async (req, res) => {
-  const { title, url, teamName, releaseDate,lyrics } = req.body;
+  const { title, url, team, releaseDate, lyrics } = req.body;
 
-  const newSong = new Song({
-    title,
-    url,
-    teamName,
-    releaseDate,
-    lyrics
-  });
+
 
   try {
+    const team = await Teams.findById(req.body.team);
+    if (!team) {
+      return res.status(404).json({ error: 'Team not found' });
+    }
+    const newSong = new Song({
+      title: title,
+      url: url,
+      team: team._id,
+      releaseDate: releaseDate,
+      lyrics: lyrics
+    });
+
     await newSong.save();
+
+    team.song.push(newSong._id);
+
+    await team.save();
+
     res.status(200).json(newSong);
   } catch (e) {
     res.status(404).json({ error: e.message });
@@ -47,7 +59,7 @@ export const getSong = async (req, res) => {
 
 export const updateSong = async (req, res) => {
   const { id } = req.params;
-  const { title, url, teamName, releaseDate,lyrics } = req.body;
+  const { title, url, teamName, releaseDate, lyrics } = req.body;
 
   const song = await Song.findById(id);
   if (song) {

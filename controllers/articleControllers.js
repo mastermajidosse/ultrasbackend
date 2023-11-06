@@ -21,11 +21,12 @@ export const getArticles = asyncHandler(async (req, res) => {
 });
 
 export const createArticle = async (req, res) => {
-  const { title, content } = req.body;
+  const { title, content, image } = req.body;
   const newArticle = new Article({
     owner: req.user._id,
     title,
     content,
+    image
   });
 
   try {
@@ -48,11 +49,12 @@ export const getArticle = async (req, res) => {
 
 export const updateArticle = async (req, res) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { title, content, image } = req.body;
 
   const article = await Article.findById(id);
   if (article) {
     article.title = title || article.title;
+    article.image = image || article.image;
     article.content = content || article.content;
     const updatedArticle = await article.save();
 

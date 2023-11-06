@@ -21,6 +21,10 @@ const productSchema = mongoose.Schema(
       required: true,
       default: 0,
     },
+    country: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Country',
+    },
   },
   {
     timestamps: true,

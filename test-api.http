@@ -2,15 +2,15 @@
 //users section
 ###get users
 get http://localhost:5000/api/v1/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 ### login
 post http://localhost:5000/api/v1/users/login
 Content-Type: application/json
 
 {
-    "email":"younes@gmail.com",
-    "password":"12341234"
+    "email":"master@gmail.com",
+    "password":"123456"
 }
 
 ### register
@@ -25,12 +25,12 @@ Content-Type: application/json
 
 ### get profile
 get http://localhost:5000/api/v1/users/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
 
 ### update user profile
 put http://localhost:5000/api/v1/users/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
     "name":"younes"
@@ -41,7 +41,7 @@ get http://localhost:5000/api/v1/users/64852daa13d7429732303eab
 
 ### delete a user by the admin
 delete http://localhost:5000/api/v1/users/648530c036b3b764c0b8e1d0
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 //products section
 
@@ -51,13 +51,13 @@ get http://localhost:5000/api/v1/products
 ### create a product
 post http://localhost:5000/api/v1/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
-  "name": "Product 2",
-  "price": 10,
-  "description": "Description For Product 2",
-  "image": "https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg"
+  "name": "HUSA Tshirt",
+  "price": 250,
+  "description": "T-shirt dédié unique aux supporters de Hassania d’Agadir..",
+  "image": "http://www.ultras.ma/images/husa.jpg"
 }
 
 ### get a product by Id
@@ -66,7 +66,7 @@ get http://localhost:5000/api/v1/products/64853518fd927a65ae4e94d5
 ### update a product by the admin
 put  http://localhost:5000/api/v1/products/64853518fd927a65ae4e94d5
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
 	"name":"new name for Product 1"
@@ -74,15 +74,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhM
 
 ### delete a product by the admin
 delete  http://localhost:5000/api/v1/products/6485356cfd927a65ae4e94dc
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 ### orders section
 
 ### create an order
 post http://localhost:5000/api/v1/orders
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
   "productId":"64853518fd927a65ae4e94d5",
@@ -91,15 +90,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhM
 
 ### get my orders
 get http://localhost:5000/api/v1/orders/mine
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 ### get order by id ( the owner of the order or the admin)
 get http://localhost:5000/api/v1/orders/648536a5fcbd6714c02da95e
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
-### get all the orders(by the admin)
+### get all the orders(by the admin)(>>>>
 get http://localhost:5000/api/v1/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhMTNkNzQyOTczMjMwM2VhYiIsImlhdCI6MTY4NjQ0OTU3OCwiZXhwIjoxNjg5MDQxNTc4fQ.2VQg6a3J6MRjoM5GFpjdFArle-7jKOsjf_JSnR67cWY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 
 
@@ -112,11 +111,12 @@ get http://localhost:5000/api/v1/articles
 ### create an article by the admin
 post http://localhost:5000/api/v1/articles
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
-  "title":"Article 1",
-  "content":"Some text"
+  "title":"إيغلز",
+  "content":"2006 المعقل الكورفا نورد معروفة ب سافانا أي معقل النمور في إفريقيا كاين بزاااف ميتقال عليها فلموفمون هي مجموعة من دون شرف حسب قوانين و مبادىء الألتراس لأنها فقدت الباش هادي نظرة ديال البعض ليها و البعض الأخر تيقول منين داو باش تورسيدا قدروا يردوا الدين لي عليهم و بالتالي شرفهم ... الباش ديالها خسراتو فتونس لصالح مجموعات الكورفا سود تونس المساندة للترجي التونسي وسط جدل كبير حول الطريقة لي مشا بيها مع تأكيد الفاسيين أن التوانسة إستعملو الأسلخة وهذا ضد قوانين ومبداىء الموفمون فتال تايغرز غتعتارف بلي الباش مشا ولكن من مبادىء الإلتراس و ليس من قوانينه أن المجموعة منين تيمشي ليها الباش خاصها تنساحب من الموفمون باش تحافظ على ماء الوجه ديالها لأن الباش و الأتوندار و الماتوس و الايشارب واي حاجة كتمثل المجموعة إلى مشات الشرف ديال المجموعة كيمشي معاها ولكن الأهم فيهم كلهم هو الباش و الفتال للأسف فقذت الباش ولكن الفتال تايغرز كيؤكدو على مشروعية الإستمرار ديالهم و عدم الانسحاب بأنهم انتقموا من المجموعات التونسية بسرقة باش torcida او الأنصار بالعربية المساندة للترجي في مدينة الناضور هاد الإلترا غطبق مبادىء الإلتراس و غترجع لتونس وغتحضر ماتش للترجي فالدوري وغتهز ميساج بالانجليزية كتبو فيه من اجلك بدأنا و من أجلك سنتوقف في مشهد حزين مرفوق برااكاج و كان الحضور بتوديع فقط الكورفا السود ومن بعد نساحبو لكن ولاحو بيان كيسبو فيه الحركية فالمغرب وخصوصا فتال تايغرز قالو للأسف المجموعة الفاسية منساحبتش لأنه الإنتقام كيعني ترد الباش ديالك او بالأحرى الشرف ديالك ديك الساعة الكل غيتقبل الإستمرارية ديالكم فالحركية ولكن للأسف الفتال مغتردش الباش ديالها وكل التيفوهات و الأعمال فهي ملغية في نظر الأخرين فقط جمعية هي لي كديرهم ماشي إلتراس  (مضمون بيان التورسيدا) .. الفتال عندها عداوات مع عدة إلترات مغربية أبرزها الكورفا تشي الرباط وكل لقاء للفريقين كان كيشهد مجازر ورشق بالحجارة بينهم خصوصا فالطريق السيار وفوق القناطر و الصراع غيكبر فإحدى مباريات الدوري بين MAS و les FAR بعد ما توجهو بعض المحسوبين على الفتال للجهة ديال الكورفا تشي  لاحو عليهم لفلام الكورفا تشي غترد بإقتلاع كراسي الملعب الفاسي كتخريب واضح للمعالم المدينة دون تحرك من الجانب الأصفر و العداوة كذلك مع الكورفا لوكا طنجة 2016 نصف نهائي كأس العرش غيوقع شغب كبير بيناتهم فطنجة بعد تأهل الماص للنهائي و للاعبين ديال الماص دازو بصعوبة للفيستير من بعد مكانو كيشيرو عليهم طنجاويين بالحجر التوعد و الصراع غيستمر بيناتهم و كذلك البيراتيس سلا وتمكن الفتال من أنهم يسرقو الباش ديال السلاويين وسط سلا و الصراع غيكبر لحد اللحظة العداوة بدرجة أقل مع ألترات أخرى و الصداقات نقدرو نقولو أهمها مع حلالة بويز القنطيرة و التعاطف المستمر بيناتهم بعد سقوطهم للدرجة الثانية وكل تنقل كيمر في أجواء سلمية لدرجة ولاو تيهزو رسائل مشتركة بيناتهم ... و أهم عداوة عندها مع ريدمان مكناس",
+  "image":"https://i.scdn.co/image/ab6761610000e5eb5c056307f5c0b6921c599c6f"
 }
 
 ### get an article by Id
@@ -217,13 +217,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0Y
 get http://localhost:5000/api/v1/photos
 
 
+  # "isThumbnail": true,
 ### create a photo by the admin
 post http://localhost:5000/api/v1/photos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5NDI2OTIwOCwiZXhwIjoxNjk2ODYxMjA4fQ.vodOlboPtJaMyMLIdx-QtSrIUVo-CVo0lEyOL_r7QlM
 
 {
   "title":"Photo 2",
+  "tags": "uar",
   "imageUrl":"https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg"
 }
 
@@ -330,13 +332,12 @@ get http://localhost:5000/api/v1/videos
 ### create video by the admin
 post http://localhost:5000/api/v1/videos
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
 
 {
-  "name": "Test4",
-  "url": "https://res.cloudinary.com/senyou/video/upload/v1686346471/speedpainting2_qorsfu.mp4",
-  "thumbnail": "https://res.cloudinary.com/senyou/image/upload/v1653736690/htm20wjsglpnepacf2qj.jpg",
-  "channelName": "CTO"
+  "name": "3000 BASEL FANS INVANSION IN FIRENZE",
+  "url": "https://youtu.be/OGqb3nlSCQs",
+  "channelName": "ULTRASATMOSFER"
 }
 
 ### get video by Id
@@ -399,3 +400,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODUyZGFhM
 ### delete song by the admin
 delete  http://localhost:5000/api/v1/songs/648a04f77ad4df2c34525f8e
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODU2MjA0YWM2NDYyMTNmM2U1ZjI3NSIsImlhdCI6MTY4NjQ2Mjk4MCwiZXhwIjoxNjg5MDU0OTgwfQ.utZhqalSFehLl5M1o3mXdLsHJ6Z3jBjT2qavJJqhRoI
+
+
+### create Country by the admin
+post http://localhost:5000/api/v1/country
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
+
+{
+  "name": "السعودية",
+  "countryId": 5 ,
+  "flagname": "sa"
+}
+
+### get Country 
+get http://localhost:5000/api/v1/country
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
+
+### create team by the admin
+post http://localhost:5000/api/v1/team
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
+
+{
+  "name": "mas",
+  "country": "6525ac057dedd30fd0a8e279",
+  "teamId": 7
+}
+### get team 
+get http://localhost:5000/api/v1/team
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc

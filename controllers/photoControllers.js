@@ -18,14 +18,29 @@ export const getPhotos = asyncHandler(async (req, res) => {
     res.status(404).json({ error: e.message });
   }
 });
+export const getPhotosThumb = asyncHandler(async (req, res) => {
+  const pageSize = 10;
+  const page = Number(req.query.pageNumber) || 1;
+  try {
+    const count = await Photo.countDocuments({});
+    const photos = await Photo.find({ isThumbnail: true })
+      .limit(pageSize)
+      .skip(pageSize * (page - 1));
+    res.status(200).json({ photos, page, pages: Math.ceil(count / pageSize) });
+  } catch (e) {
+    res.status(404).json({ error: e.message });
+  }
+});
 
 export const createPhoto = async (req, res) => {
-  const { title, imageUrl } = req.body;
+  const { title, imageUrl, isThumbnail, tags } = req.body;
 
   const newPhoto = new Photo({
     owner: req.user._id,
     title,
     imageUrl,
+    tags,
+    isThumbnail,
   });
 
   try {

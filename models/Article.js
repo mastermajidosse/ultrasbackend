@@ -44,8 +44,16 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
     comments: [commentSchemaType],
     likes: [mongoose.Types.ObjectId],
+    country: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Country',
+    },
   },
   { timestamps: true }
 );
