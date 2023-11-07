@@ -19,6 +19,10 @@ export const createTeam = async (req, res) => {
       country: country._id, // Assign the country's ID
       logo: req.body.logo,
       teamId: req.body.teamId,
+      ultraslogo: req.body.ultraslogo,
+      fansTotal: req.body.fansTotal,
+      link: req.body.link,
+      ultras: req.body.ultras,
     });
 
     // Save the team
@@ -59,17 +63,18 @@ export const getTeamById = async (req, res) => {
 
 export const updateTeam = async (req, res) => {
   const { id } = req.params;
-  const { name, country, photo, song, ultraslogo, fansTotal, link } = req.body;
+  // const { name, country, photo, song, ultraslogo, ultras, fansTotal, link } = req.body;
 
   const team = await Teams.findById(id);
   if (team) {
-    team.name = name || Teams.name;
-    team.country = country || Teams.country;
-    team.photo = photo || Teams.photo;
-    team.song = song || Teams.song;
-    team.ultraslogo = ultraslogo || Teams.ultraslogo;
-    team.fansTotal = fansTotal || Teams.fansTotal;
-    team.link = link || Teams.link;
+    team.name = req.body.name || Teams.name;
+    team.country = req.body.country || Teams.country;
+    team.photo = req.body.photo || Teams.photo;
+    team.song = req.body.song || Teams.song;
+    team.ultraslogo = req.body.ultraslogo || Teams.ultraslogo;
+    team.fansTotal = req.body.fansTotal || Teams.fansTotal;
+    team.link = req.body.link || Teams.link;
+    team.ultras = req.body.ultras || Teams.ultras;
 
     const updatedTeams = await team.save();
 

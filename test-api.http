@@ -427,7 +427,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0Z
 {
   "name": "mas",
   "country": "6525ac057dedd30fd0a8e279",
-  "teamId": 7
+  "teamId": 11,
+  "ultras": "winners",
+  "link": "ww",
+  "fansTotal": 777
 }
 ### get team 
 get http://localhost:5000/api/v1/team
@@ -435,7 +438,18 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
 
 ### update team 
-put http://localhost:5000/api/v1/team/7
+put http://localhost:5000/api/v1/team/654a452c904e0428a1c8de20
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
+
+{
+  "ultras": "wers",
+  "link": "test",
+  "fansTotal": 707
+}
+
+### update team online 
+put https://api.ultrasx.com/api/v1/team/6525ae5598eb2e4316178527
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Zjc2NTc0ZGUwMzQ2MmI5N2FhODQ3NSIsImlhdCI6MTY5Njk2MTc1MCwiZXhwIjoxNjk5NTUzNzUwfQ.gqZBnYgZdXgmDvihEO4QPibnXMgdVLdJlxvGDZBaioc
 {
