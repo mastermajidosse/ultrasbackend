@@ -15,7 +15,7 @@ app
   .use("/api/v1", baseRoutes);
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3300;
 
 app.listen(
   PORT,
