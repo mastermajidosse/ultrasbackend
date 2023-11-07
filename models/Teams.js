@@ -19,6 +19,18 @@ const teamSchema = mongoose.Schema(
     logo: {
       type: String,
     },
+    ultraslogo: {
+      type: String,
+    },
+    ultras: {
+      type: String,
+    },
+    fansTotal: {
+      type: Number,
+    },
+    link: {
+      type: String,
+    },
     photo: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Photo',
