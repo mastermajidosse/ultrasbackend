@@ -9,6 +9,7 @@ export const getVideos = asyncHandler(async (req, res) => {
     const count = await Video.countDocuments({});
     const videos = await Video.find()
       .limit(pageSize)
+      .sort({ _id: -1 })
       .skip(pageSize * (page - 1));
     res.status(200).json({ videos, page, pages: Math.ceil(count / pageSize) });
   } catch (e) {

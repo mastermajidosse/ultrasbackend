@@ -22,6 +22,9 @@ const teamSchema = mongoose.Schema(
     ultraslogo: {
       type: String,
     },
+    Color: {
+      type: String,
+    },
     ultras: {
       type: String,
     },
