@@ -41,7 +41,7 @@ export const createTeam = async (req, res) => {
 // Get all teams
 export const getAllTeams = async (req, res) => {
   try {
-    const teams = await Teams.find().populate('country', 'countryId name flagname').sort({ "teamId": 1 });
+    const teams = await Teams.find().populate('photo').populate('country', 'countryId name flagname').sort({ "teamId": 1 });
     res.json(teams);
   } catch (err) {
     res.status(500).json({ error: err.message });
