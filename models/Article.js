@@ -48,6 +48,9 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    excerpt: {
+      type: String,
+    },
     comments: [commentSchemaType],
     likes: [mongoose.Types.ObjectId],
     country: {
