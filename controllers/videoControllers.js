@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import Video from "../models/Video.js";
 
 export const getVideos = asyncHandler(async (req, res) => {
-  const pageSize = 5;
+  const pageSize = 10;
   const page = Number(req.query.pageNumber) || 1;
 
   try {

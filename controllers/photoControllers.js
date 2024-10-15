@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import express from "express";
 import mongoose from "mongoose";
 import Photo from "../models/Photo.js";
-
+import Teams from "../models/Teams.js";
 const router = express.Router();
 
 export const getPhotos = asyncHandler(async (req, res) => {
@@ -33,7 +33,7 @@ export const getPhotosThumb = asyncHandler(async (req, res) => {
 });
 
 export const createPhoto = async (req, res) => {
-  const { title, imageUrl, isThumbnail, tags } = req.body;
+  const { title, imageUrl, isThumbnail, tags ,teamId} = req.body;
 
   const newPhoto = new Photo({
     owner: req.user._id,
@@ -45,6 +45,15 @@ export const createPhoto = async (req, res) => {
 
   try {
     await newPhoto.save();
+    if (teamId) {
+      const team = await Teams.findById(teamId);
+      if (team) {
+        team.photo.push(newPhoto._id); // Add the new photo ID to the team's photo array
+        await team.save();
+      } else {
+        return res.status(404).json({ error: 'Team not found' });
+      }
+    }
     res.status(200).json(newPhoto);
   } catch (e) {
     res.status(404).json({ error: e.message });

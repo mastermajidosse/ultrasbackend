@@ -5,7 +5,9 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import baseRoutes from "./routes/baseRoutes.js";
 import connectDb from "./config/connectDb.js";
-
+// Log environment variables
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('MongoDB URI:', process.env.CONNECTION_URL);
 connectDb()
 const app = express();
 app
@@ -15,7 +17,7 @@ app
   .use("/api/v1", baseRoutes);
 
 
-const PORT = process.env.PORT || 3300;
+const PORT = process.env.PORT || 5500;
 
 app.listen(
   PORT,

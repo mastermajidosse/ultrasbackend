@@ -63,13 +63,13 @@ export const getTeamById = async (req, res) => {
 
 export const updateTeam = async (req, res) => {
   const { id } = req.params;
-  // const { name, country, photo, song, ultraslogo, ultras, fansTotal, link } = req.body;
+  //const { name, country, photo, song, ultraslogo, ultras, fansTotal, link } = req.body;
 
   const team = await Teams.findById(id);
   if (team) {
     team.name = req.body.name || Teams.name;
     team.country = req.body.country || Teams.country;
-    team.photo = req.body.photo || Teams.photo;
+    team.photo = req.body.photo || Teams.photo.push(req.body.photo);
     team.song = req.body.song || Teams.song;
     team.ultraslogo = req.body.ultraslogo || Teams.ultraslogo;
     team.fansTotal = req.body.fansTotal || Teams.fansTotal;
