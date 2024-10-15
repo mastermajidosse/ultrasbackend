@@ -18,19 +18,21 @@ export const getSongs = asyncHandler(async (req, res) => {
 });
 
 export const createSong = async (req, res) => {
-  const { title, url, team, releaseDate, lyrics } = req.body;
+  const { title, url, teamId, releaseDate, lyrics } = req.body;
 
 
 
   try {
-    const team = await Teams.findById(req.body.team);
+    const team = await Teams.findById(teamId
+     //req.body.team
+    );
     if (!team) {
       return res.status(404).json({ error: 'Team not found' });
     }
     const newSong = new Song({
       title: title,
       url: url,
-      team: team._id,
+      team: teamId,
       releaseDate: releaseDate,
       lyrics: lyrics
     });
