@@ -18,7 +18,7 @@ export const getSongs = asyncHandler(async (req, res) => {
 });
 
 export const createSong = async (req, res) => {
-  const { title, url, teamId, releaseDate, lyrics } = req.body;
+  const { title, url, teamId, releaseDate, lyrics,thumbnail } = req.body;
 
 
 
@@ -34,7 +34,8 @@ export const createSong = async (req, res) => {
       url: url,
       team: teamId,
       releaseDate: releaseDate,
-      lyrics: lyrics
+      lyrics: lyrics,
+      thumbnail: thumbnail 
     });
 
     await newSong.save();

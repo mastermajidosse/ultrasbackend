@@ -2,11 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "proxy": false,
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
