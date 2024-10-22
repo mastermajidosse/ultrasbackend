@@ -19,7 +19,7 @@ import { protect, admin } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
 
-router.route("/").get(getArticles).post(protect, admin, createArticle);
+router.route("/").get(getArticles).post(protect, createArticle);
 router
   .route("/:id")
   .get(getArticle)

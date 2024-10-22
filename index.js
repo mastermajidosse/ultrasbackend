@@ -9,6 +9,7 @@ console.log('Loaded environment variables:', process.env);
 console.log('PORT:', process.env.PORT);
 console.log('NODE_ENV:', process.env.NODE_ENV);
 console.log('MongoDB URI:', process.env.CONNECTION_URL);
+console.log('MongoDB URI:', process.env.JWT_SECRET);
 connectDb()
 const app = express();
 app
